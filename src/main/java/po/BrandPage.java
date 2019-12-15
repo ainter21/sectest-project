@@ -12,7 +12,7 @@ import org.openqa.selenium.support.How;
 import org.openqa.selenium.support.ui.Select;
 
 
-public class BrandPage extends PageObject{
+public class BrandPage extends MenuComponent{
 
 	
 	@FindBy (xpath = "//button[@class='btn btn-default button1']")
