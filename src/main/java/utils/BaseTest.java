@@ -8,6 +8,8 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.opera.OperaDriver;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
+import po.DashBoardPage;
+import po.IndexPage;
 
 public class BaseTest {
 
@@ -20,6 +22,12 @@ public class BaseTest {
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		}
+	}
+	public DashBoardPage defaultLogin() {
+		
+		DashBoardPage dashBoardPage = new IndexPage(driver).login("admin", "admin");
+		waitForWebsite();
+		return dashBoardPage;
 	}
 	
 	/*

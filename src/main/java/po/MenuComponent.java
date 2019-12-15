@@ -16,6 +16,9 @@ public class MenuComponent extends PageObject{
 	@FindBy(xpath = "//li[@id='topNavLogout']//a[1]")
 	WebElement logoutMenu;
 	
+	@FindBy (xpath = "//a[contains(text(),'Brand')]")
+	WebElement brandMenu;
+	
 	public MenuComponent(WebDriver driver) {
 		super(driver);
 
@@ -34,6 +37,13 @@ public class MenuComponent extends PageObject{
 		userMenu.click();
 		logoutMenu.click();
 		return new IndexPage(driver);
+		
+	}
+	
+	public BrandPage goToBrandPage() {
+		
+		brandMenu.click();
+		return new BrandPage(driver);
 		
 	}
 

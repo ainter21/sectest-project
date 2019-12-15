@@ -7,7 +7,6 @@ import org.junit.Test;
 
 import po.DashBoardPage;
 import po.IndexPage;
-import po.MenuComponent;
 import po.UserSettingPage;
 import utils.BaseTest;
 
