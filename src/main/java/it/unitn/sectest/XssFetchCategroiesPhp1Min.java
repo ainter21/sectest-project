@@ -27,6 +27,7 @@ public class XssFetchCategroiesPhp1Min extends BaseTest{
 		categoriesPage.addCategory(expected, "Available");
 		waitForWebsite();
 		
+		
 		String actual = categoriesPage.getCategoriesName().getAttribute("innerHTML");
 		assertEquals(expected, actual);
 		

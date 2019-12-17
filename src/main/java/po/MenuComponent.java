@@ -20,6 +20,8 @@ public class MenuComponent extends PageObject{
 	WebElement brandMenu;
 	@FindBy(xpath = "//li[@id='navCategories']//a[1]")
 	WebElement categoriesMenu;
+	@FindBy(xpath = "/html[1]/body[1]/nav[1]/div[1]/div[2]/ul[1]/li[4]/a[1]")
+	WebElement productMenu;
 	
 	public MenuComponent(WebDriver driver) {
 		super(driver);
@@ -54,5 +56,11 @@ public class MenuComponent extends PageObject{
 		categoriesMenu.click();
 		return new CategoriesPage(driver);
 		
+	}
+	
+	public ProductPage goToProductPage() {
+		
+		productMenu.click();
+		return new ProductPage(driver);
 	}
 }
