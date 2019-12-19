@@ -21,18 +21,18 @@ public class XssFetchBrandPhp1Min extends BaseTest{
 		
 		brandPage = dashBoardPage.goToBrandPage();
 		
-		brandPage.addBrand("<h1>Malicious</h1>", "Available");
+		brandPage.addBrand("Malicious<script>alert(\"brand\")</script>", "Available");
 		
 		waitForWebsite();
 		
 		
-		String expected = "<h1>Malicious</h1>";
+		//String expected = "Malicious<script>alert(\"brand\")</script>";
 		
-		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", brandPage.getBrandName());
+		//((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", brandPage.getBrandName());
 		waitForWebsite();
 		
-		String actual = brandPage.getBrandName().getAttribute("innerHTML");
-		assertEquals(expected, actual);
+		assertTrue(brandPage.isAlert());
+		
 	}
 	
 	@After

@@ -1,6 +1,7 @@
 package it.unitn.sectest;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
 import org.junit.After;
 import org.junit.Test;
@@ -9,7 +10,7 @@ import po.CategoriesPage;
 import po.DashBoardPage;
 import utils.BaseTest;
 
-public class XssFetchCategroiesPhp1Min extends BaseTest{
+public class XssFetchCategoriesPhp1Min extends BaseTest{
 
 	
 	DashBoardPage dashboardPage;
@@ -23,13 +24,13 @@ public class XssFetchCategroiesPhp1Min extends BaseTest{
 		
 		categoriesPage = dashboardPage.goToCategoriesPage();
 		
-		String expected = "<h1>Malicious</h1>";
+		String expected = "Malicious<script>alert(\"categories\")</script>)";
 		categoriesPage.addCategory(expected, "Available");
 		waitForWebsite();
 		
 		
-		String actual = categoriesPage.getCategoriesName().getAttribute("innerHTML");
-		assertEquals(expected, actual);
+		
+		assertTrue(categoriesPage.isAlert());
 		
 		
 		

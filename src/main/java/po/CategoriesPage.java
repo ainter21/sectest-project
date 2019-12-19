@@ -49,6 +49,7 @@ public class CategoriesPage extends MenuComponent{
 		Select select = new Select(categoriesStatusSelect);
 		select.selectByVisibleText(availability);
 		createCategoriesBtn.click();
+		clickAlert();
 		closeAddCategoriesModal.click();
 	}
 	

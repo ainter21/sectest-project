@@ -1,6 +1,7 @@
 package it.unitn.sectest;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
 import org.junit.After;
 import org.junit.Test;
@@ -25,11 +26,10 @@ public class XssProductPhp1Min extends BaseTest{
 		brandPage.addBrand("Malicious<script>alert(\"brand\")</script>", "Available");
 		waitForWebsite();
 		productPage = brandPage.goToProductPage();
-		String expected = "brand";
-		String actual = productPage.checkAlert();
-		productPage.checkAlert();
+		productPage.clickAlert();
 		waitForWebsite();
-		assertEquals(expected, actual);
+		productPage.clickAlert();
+		assertTrue(productPage.isAlert());
 		
 		
 		
@@ -39,7 +39,8 @@ public class XssProductPhp1Min extends BaseTest{
 	public void reset() {
 		
 		waitForWebsite();
-		productPage.goToBrandPage();
+		brandPage = productPage.goToBrandPage();
+		brandPage.clickAlert();
 		waitForWebsite();
 		brandPage.removeBrand();
 		waitForWebsite();

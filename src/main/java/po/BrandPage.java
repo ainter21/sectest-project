@@ -2,7 +2,7 @@ package po;
 
 
 import org.openqa.selenium.JavascriptExecutor;
-
+import org.openqa.selenium.UnhandledAlertException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
@@ -60,6 +60,7 @@ public class BrandPage extends MenuComponent{
 		Select element = new Select(brandStatusSelect);
 		element.selectByVisibleText(availability);
 		createBrandBtn.click();
+		clickAlert();
 		closeButton.click();
 		
 	}
@@ -77,12 +78,13 @@ public class BrandPage extends MenuComponent{
 	public void removeBrand() {
 		
 		actionButton.click();
-
 		JavascriptExecutor js = ((JavascriptExecutor) driver);
 		js.executeScript("arguments[0].scrollIntoView(true);", removeButton);
 		removeButton.click();		
 		removeBrandBtn.click();
 	}
+	
+	
 	
 
 }
