@@ -31,9 +31,15 @@ public class MenuComponent extends PageObject{
 	@FindBy(xpath = "/html[1]/body[1]/nav[1]/div[1]/div[2]/ul[1]/li[4]/a[1]")
 	WebElement productMenu;
 	
+	@FindBy (xpath = "/html[1]/body[1]/nav[1]/div[1]/div[2]/ul[1]/li[5]/a[1]")
+	WebElement ordersMenu;
+	
+	@FindBy (xpath = "//li[@id='topNavAddOrder']//a[1]")
+	WebElement newOrderMenu;
+	
 	public MenuComponent(WebDriver driver) {
 		super(driver);
-		wait = new WebDriverWait(driver, 10);
+		wait = new WebDriverWait(driver, 3);
 
 	}
 
@@ -72,5 +78,14 @@ public class MenuComponent extends PageObject{
 		js.executeScript("arguments[0].click();", productMenu);
 
 		return new ProductPage(driver);
+	}
+	
+	public NewOrderPage goToNewOrderPage() {
+		
+		waitForWebsite();
+		ordersMenu.click();
+		newOrderMenu.click();
+		
+		return new NewOrderPage(driver);
 	}
 }

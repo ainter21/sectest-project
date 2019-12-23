@@ -6,6 +6,7 @@ import java.util.List;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.NoAlertPresentException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -74,17 +75,8 @@ public class ProductPage extends MenuComponent{
 
 
 		js.executeScript("arguments[0].scrollIntoView(true);", productStatus);
-		Select brandSelect = new Select(brandName);
-	     List<WebElement> optionsList = brandSelect.getOptions();
-	     for (WebElement option : optionsList) {
-	                   System.out.println(option.getText());
-	     }
-		brandName.click();
-		waitForWebsite();
-		waitForWebsite();
-		waitForWebsite();
-		
-		brandSelect.selectByVisibleText(optionsList.get(2).getText());
+		Select brandSelect = new Select(brandName);		
+		brandSelect.selectByVisibleText(brand);
 
 		Select categoriesSelect = new Select(categoryName);
 		
@@ -95,13 +87,14 @@ public class ProductPage extends MenuComponent{
 
 		createProductBtn.click();
 
-		for(int i=0; i < 4; ++i) {
+	
+		for(int i=0; i < 5; ++i) {
 			waitForWebsite();
 			clickAlert();
+			
 		}
-
-
-
+		
+		
 		closeBtn.click();
 
 
