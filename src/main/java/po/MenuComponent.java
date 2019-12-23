@@ -1,12 +1,20 @@
 package po;
 
+import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Wait;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class MenuComponent extends PageObject{
 
-
+	
+	WebDriverWait wait;
+	JavascriptExecutor js = (JavascriptExecutor)driver;
+	
 	@FindBy(xpath = "//li[@id='navSetting']//a[@class='dropdown-toggle']")
 	WebElement userMenu;
 
@@ -25,6 +33,7 @@ public class MenuComponent extends PageObject{
 	
 	public MenuComponent(WebDriver driver) {
 		super(driver);
+		wait = new WebDriverWait(driver, 10);
 
 	}
 
@@ -53,14 +62,15 @@ public class MenuComponent extends PageObject{
 
 	public CategoriesPage goToCategoriesPage() {
 		
-		categoriesMenu.click();
+		js.executeScript("arguments[0].click();", categoriesMenu);
 		return new CategoriesPage(driver);
 		
 	}
 	
 	public ProductPage goToProductPage() {
 		
-		productMenu.click();
+		js.executeScript("arguments[0].click();", productMenu);
+
 		return new ProductPage(driver);
 	}
 }
