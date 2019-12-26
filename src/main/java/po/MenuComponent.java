@@ -37,6 +37,9 @@ public class MenuComponent extends PageObject{
 	@FindBy (xpath = "//li[@id='topNavAddOrder']//a[1]")
 	WebElement newOrderMenu;
 	
+	@FindBy (xpath = "//li[@id='topNavManageOrder']//a[1]")
+	WebElement ordersList;
+	
 	public MenuComponent(WebDriver driver) {
 		super(driver);
 		wait = new WebDriverWait(driver, 3);
@@ -87,5 +90,14 @@ public class MenuComponent extends PageObject{
 		newOrderMenu.click();
 		
 		return new NewOrderPage(driver);
+	}
+	
+	public OrdersPage gotToOrdersPage() {
+		
+		waitForWebsite();
+		ordersMenu.click();
+		ordersList.click();
+		return new OrdersPage(driver);
+		
 	}
 }

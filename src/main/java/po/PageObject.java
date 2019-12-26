@@ -4,6 +4,8 @@ import org.openqa.selenium.NoAlertPresentException;
 import org.openqa.selenium.UnhandledAlertException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class PageObject {
 
@@ -28,6 +30,8 @@ public class PageObject {
 	
 	public boolean clickAlert() {
 		try {
+			WebDriverWait webDriverWait = new WebDriverWait(driver, 1);
+			webDriverWait.until(ExpectedConditions.alertIsPresent());
 			driver.switchTo().alert().accept();
 			alert = true;
 		}catch(NoAlertPresentException e) {
