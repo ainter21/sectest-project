@@ -13,7 +13,7 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 import po.BrandPage;
 import po.CategoriesPage;
 import po.DashBoardPage;
-import po.EditOrder;
+import po.EditOrderPage;
 import po.IndexPage;
 import po.NewOrderPage;
 import po.OrdersPage;
@@ -35,7 +35,7 @@ public class BaseTest {
 	protected OrdersPage ordersPage;
 	protected ReportPage reportPage;
 	protected UserSettingPage userSettingPage;
-	protected EditOrder editOrder;
+	protected EditOrderPage editOrderPage;
 
 	public void waitForWebsite() {
 		try {

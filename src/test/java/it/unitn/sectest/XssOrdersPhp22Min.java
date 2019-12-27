@@ -1,32 +1,30 @@
 package it.unitn.sectest;
 
-import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.*;
 
 import org.junit.After;
 import org.junit.Test;
+
 import utils.BaseTest;
 
-public class XssOrdersPhp21Min extends BaseTest{
-
-	
+public class XssOrdersPhp22Min extends BaseTest{
 
 	@Test
 	public void test() {
-
+		
 		dashboardPage = defaultLogin();
 		newOrderPage = dashboardPage.goToNewOrderPage();
 		
-		newOrderPage.addOrder("\"/><script>alert(\"hello\")</script><input type=\"hidden\"",
-				"1234");
+		newOrderPage.addOrder("name",
+				"\"/><script>alert(\"contact\")</script><input type=\"hidden\"");
 		
 		ordersPage = newOrderPage.goToOrdersPage();
 		ordersPage.clickAlert();
 		editOrderPage = ordersPage.goToEditOrder();
 		
 		assertTrue(editOrderPage.clickAlert());
-		
 	}
-	
+
 	@After
 	public void reset() {
 		
@@ -36,5 +34,4 @@ public class XssOrdersPhp21Min extends BaseTest{
 		waitForWebsite();
 		ordersPage.logout();
 	}
-
 }

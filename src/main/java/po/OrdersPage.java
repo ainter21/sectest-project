@@ -36,13 +36,13 @@ public class OrdersPage extends MenuComponent{
 	}
 	
 	
-	public EditOrder goToEditOrder() {
+	public EditOrderPage goToEditOrder() {
 		
 		
 		actionMenu.click();
 		js.executeScript("arguments[0].scrollIntoView(true);", editOrderModalBtn);
 		editOrderModalBtn.click();
-		return new EditOrder(driver);
+		return new EditOrderPage(driver);
 	}
 	
 	

@@ -44,21 +44,19 @@ public class XssGetOrderReportPhp1Min extends BaseTest{
 		System.out.println(parentWindowHandle);
 
 		Set<String> allWindowHandles = driver.getWindowHandles();
-		
-		System.out.println(allWindowHandles.size());
 
 		PDFReportPage pdf;
 		
 		for(String handle : allWindowHandles)
 		{
 			if(!handle.equals(parentWindowHandle)) {
-				System.out.println(handle);
+
 				driver.switchTo().window(handle); //Switch to the desired window first and then execute commands using driver
-//				driver.manage().window().maximize();
+
 				
-				System.out.println(driver.getWindowHandle());
+
 				pdf = new PDFReportPage(driver);
-				System.out.println(driver.getWindowHandle());
+
 				assertTrue(pdf.clickAlert());
 				assertTrue(pdf.clickAlert());
 				
