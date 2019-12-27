@@ -1,6 +1,7 @@
 package po;
 
 import org.openqa.selenium.NoAlertPresentException;
+import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.UnhandledAlertException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
@@ -36,7 +37,12 @@ public class PageObject {
 			alert = true;
 		}catch(NoAlertPresentException e) {
 			alert = false;
+			System.out.println("no alert");
+		}catch (TimeoutException e) {
+			alert = false;	
+			System.out.println("timeout");
 		}
+
 		return alert;
 		
 	}

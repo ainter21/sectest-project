@@ -12,10 +12,7 @@ import utils.BaseTest;
 
 public class XssProductPhp3Min extends BaseTest{
 
-	
-	DashBoardPage dashboardPage;
-	BrandPage brandPage;
-	ProductPage productPage;
+
 	@Test
 	public void test() {
 
@@ -25,11 +22,10 @@ public class XssProductPhp3Min extends BaseTest{
 		brandPage.addBrand("Malicious<script>alert(\"brand\")</script>", "Available");
 		waitForWebsite();
 		productPage = brandPage.goToProductPage();
-		productPage.clickAlert();
-		waitForWebsite();
-		productPage.clickAlert();
-		assertTrue(productPage.isAlert());
 		
+		
+		assertTrue(productPage.clickAlert());
+		productPage.clickAlert();
 		
 		
 	}

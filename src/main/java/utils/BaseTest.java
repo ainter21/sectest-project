@@ -10,13 +10,32 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.opera.OperaDriver;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
+import po.BrandPage;
+import po.CategoriesPage;
 import po.DashBoardPage;
+import po.EditOrder;
 import po.IndexPage;
+import po.NewOrderPage;
+import po.OrdersPage;
+import po.ProductPage;
+import po.ReportPage;
+import po.UserSettingPage;
 
 public class BaseTest {
 
 	protected static WebDriver driver;
 	protected static String URL = "http://localhost/inventory-management-system/";
+	
+	protected DashBoardPage dashboardPage;
+	protected ProductPage productPage;
+	protected NewOrderPage newOrderPage;
+	protected BrandPage brandPage;
+	protected CategoriesPage categoriesPage;
+	protected IndexPage indexPage;
+	protected OrdersPage ordersPage;
+	protected ReportPage reportPage;
+	protected UserSettingPage userSettingPage;
+	protected EditOrder editOrder;
 
 	public void waitForWebsite() {
 		try {

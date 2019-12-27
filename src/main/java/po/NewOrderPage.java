@@ -65,6 +65,7 @@ public class NewOrderPage extends MenuComponent{
 		series.perform();
 		this.clientName.sendKeys(clientName);
 		this.clientContact.sendKeys(clientContact);
+		waitForWebsite();
 		
 		Select product = new Select(productName1);
 		product.selectByVisibleText("iPhone");

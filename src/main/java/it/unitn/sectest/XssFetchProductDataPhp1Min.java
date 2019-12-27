@@ -4,20 +4,12 @@ import static org.junit.Assert.*;
 
 import org.junit.After;
 import org.junit.Test;
-import org.openqa.selenium.NoAlertPresentException;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
-import po.DashBoardPage;
-import po.NewOrderPage;
-import po.ProductPage;
 import utils.BaseTest;
 
 public class XssFetchProductDataPhp1Min extends BaseTest{
 
-	DashBoardPage dashboardPage;
-	ProductPage productPage;
-	NewOrderPage newOrdersPage;
+
 	@Test
 	public void test() {
 
@@ -34,19 +26,18 @@ public class XssFetchProductDataPhp1Min extends BaseTest{
 				"PC",
 				"Available");
 
-		newOrdersPage = productPage.goToNewOrderPage();
+		newOrderPage = productPage.goToNewOrderPage();
 
-		waitForWebsite();
-		newOrdersPage.clickAlert();
-		waitForWebsite();
-		newOrdersPage.clickAlert();
-		waitForWebsite();
-		newOrdersPage.clickAlert();
+
+		newOrderPage.clickAlert();
+
+		newOrderPage.clickAlert();
+
+		newOrderPage.clickAlert();
 		
-		newOrdersPage.addProductRow();
-		waitForWebsite();
-		newOrdersPage.clickAlert();
-		assertTrue(newOrdersPage.isAlert());
+		newOrderPage.addProductRow();		
+		assertTrue(newOrderPage.clickAlert());
+		assertTrue(newOrderPage.clickAlert());
 
 
 
@@ -56,7 +47,7 @@ public class XssFetchProductDataPhp1Min extends BaseTest{
 	public void reset() {
 
 		waitForWebsite();
-		productPage = newOrdersPage.goToProductPage();
+		productPage = newOrderPage.goToProductPage();
 		waitForWebsite();
 		productPage.clickAlert();
 		waitForWebsite();

@@ -13,9 +13,7 @@ import utils.BaseTest;
 public class XssFetchOrderPhp1Min extends BaseTest{
 
 	
-	DashBoardPage dashboardPage;
-	NewOrderPage newOrderPage;
-	OrdersPage ordersPage;
+
 	
 	@Test
 	public void test() {
@@ -27,13 +25,8 @@ public class XssFetchOrderPhp1Min extends BaseTest{
 		waitForWebsite();
 		newOrderPage.addOrder("Malicious<script>alert(\"name\")</script>","Malicious<script>alert(\"number\")</script>");
 		waitForWebsite();
-		ordersPage = newOrderPage.gotToOrdersPage();
-		
-		//waitForWebsite();
-		;
-		//waitForWebsite();
-		;
-		
+		ordersPage = newOrderPage.goToOrdersPage();
+
 		assertTrue(ordersPage.clickAlert());
 		assertTrue(ordersPage.clickAlert());
 	}

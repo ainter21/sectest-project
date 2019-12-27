@@ -12,9 +12,7 @@ import utils.BaseTest;
 
 public class XssFetchCategoriesPhp1Min extends BaseTest{
 
-	
-	DashBoardPage dashboardPage;
-	CategoriesPage categoriesPage;
+
 	
 	@Test
 	public void test() {
@@ -27,9 +25,7 @@ public class XssFetchCategoriesPhp1Min extends BaseTest{
 		String expected = "Malicious<script>alert(\"categories\")</script>)";
 		categoriesPage.addCategory(expected, "Available");
 		waitForWebsite();
-		
-		
-		
+
 		assertTrue(categoriesPage.isAlert());
 		
 		

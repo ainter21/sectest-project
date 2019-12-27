@@ -12,9 +12,7 @@ import utils.BaseTest;
 
 public class XssDashboardPhp10Min extends BaseTest{
 
-	IndexPage indexPage;
-	DashBoardPage dashBoardPage;
-	UserSettingPage userSettingPage;
+
 	@Test
 	public void test() {
 
@@ -22,10 +20,10 @@ public class XssDashboardPhp10Min extends BaseTest{
 		String username="admin";
 		String password = "admin";
 		indexPage = new IndexPage(driver);
-		dashBoardPage = indexPage.login(username, password);
+		dashboardPage = indexPage.login(username, password);
 		waitForWebsite();
 		//go to settings
-		userSettingPage = dashBoardPage.goToUserSettings();
+		userSettingPage = dashboardPage.goToUserSettings();
 		waitForWebsite();
 		//change username
 		String xssUsername = "<h1>admin</h1>";
@@ -35,11 +33,11 @@ public class XssDashboardPhp10Min extends BaseTest{
 		indexPage = userSettingPage.logout();
 		waitForWebsite();
 		//login again
-		dashBoardPage = indexPage.login(xssUsername, password);
+		dashboardPage = indexPage.login(xssUsername, password);
 
 		//assert that username has HTML inside
 
-		String innerHTML = dashBoardPage.getUserOrder().getAttribute("innerHTML");
+		String innerHTML = dashboardPage.getUserOrder().getAttribute("innerHTML");
 
 		assertEquals("<h1>admin</h1>", innerHTML);
 
@@ -52,7 +50,7 @@ public class XssDashboardPhp10Min extends BaseTest{
 	@After
 	public void reset() {
 		//change back username
-		userSettingPage = dashBoardPage.goToUserSettings();
+		userSettingPage = dashboardPage.goToUserSettings();
 		waitForWebsite();
 		userSettingPage.changeUsername("admin");
 		waitForWebsite();

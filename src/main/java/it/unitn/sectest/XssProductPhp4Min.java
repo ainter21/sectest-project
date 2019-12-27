@@ -12,9 +12,7 @@ import utils.BaseTest;
 
 public class XssProductPhp4Min extends BaseTest{
 
-	DashBoardPage dashboardPage;
-	CategoriesPage categoriesPage;
-	ProductPage productPage;
+
 	@Test
 	public void test() {
 		
@@ -28,12 +26,11 @@ public class XssProductPhp4Min extends BaseTest{
 		waitForWebsite();
 		
 		productPage = categoriesPage.goToProductPage();
-		productPage.clickAlert();
-		waitForWebsite();
-		productPage.clickAlert();
-		waitForWebsite();
 		
-		assertTrue(productPage.isAlert());
+
+		
+		assertTrue(productPage.clickAlert());
+		productPage.clickAlert();
 		
 	}
 	
@@ -41,7 +38,6 @@ public class XssProductPhp4Min extends BaseTest{
 	public void reset() {
 	
 		categoriesPage = productPage.goToCategoriesPage();
-		waitForWebsite();
 		categoriesPage.clickAlert();
 		waitForWebsite();
 		categoriesPage.removeCategory();

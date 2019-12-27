@@ -12,6 +12,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class ProductPage extends MenuComponent{
 
@@ -57,8 +58,10 @@ public class ProductPage extends MenuComponent{
 
 	public void addProduct(String name, String quantity, String rate, String brand, String category, String status) {
 
-//		js.executeScript("arguments[0].click();", addProductModalBtn);
 
+		
+		wait = new WebDriverWait(driver, 2);
+		wait.until(ExpectedConditions.elementToBeClickable(By.id("addProductModalBtn")));
 		addProductModalBtn.click();
 		productName.sendKeys(name);
 		String absPath = "";
@@ -88,8 +91,7 @@ public class ProductPage extends MenuComponent{
 		createProductBtn.click();
 
 	
-		for(int i=0; i < 5; ++i) {
-			waitForWebsite();
+		for(int i=0; i < 3; ++i) {
 			clickAlert();
 			
 		}
