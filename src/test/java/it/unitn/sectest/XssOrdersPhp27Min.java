@@ -31,7 +31,7 @@ public class XssOrdersPhp27Min extends BaseTest{
 		newOrderPage.clickAlert();
 		
 		newOrderPage.addOrder("name", 
-				"1234");
+				"1234", null, null, null, null, null);
 		
 		ordersPage = newOrderPage.goToOrdersPage();
 		

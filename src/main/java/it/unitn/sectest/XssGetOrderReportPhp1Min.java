@@ -31,7 +31,7 @@ public class XssGetOrderReportPhp1Min extends BaseTest{
 
 		newOrderPage = dashboardPage.goToNewOrderPage();
 
-		newOrderPage.addOrder("Malicious<script>alert(\"name\")</script>", "Malicious<script>alert(\"number\")</script>");
+		newOrderPage.addOrder("Malicious<script>alert(\"name\")</script>", "Malicious<script>alert(\"number\")</script>", null, null, null, null, null);
 
 		reportPage = newOrderPage.goToReportPage();
 		

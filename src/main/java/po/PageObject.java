@@ -1,5 +1,6 @@
 package po;
 
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.NoAlertPresentException;
 import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.UnhandledAlertException;
@@ -12,6 +13,8 @@ public class PageObject {
 
 	protected WebDriver driver;
 	private boolean alert= false;
+	WebDriverWait wait;
+	JavascriptExecutor js = (JavascriptExecutor)driver;
 	
 	public boolean isAlert() {
 		return alert;
@@ -26,6 +29,7 @@ public class PageObject {
 	public PageObject(WebDriver driver) {
 		this.driver = driver;
 		PageFactory.initElements(driver, this);
+		js = (JavascriptExecutor)driver;
 	}
 	
 	

@@ -7,31 +7,30 @@ import org.junit.Test;
 
 import utils.BaseTest;
 
-public class XssOrdersPhp22Min extends BaseTest{
+public class XssOrdersPhp43Min extends BaseTest{
 
 	@Test
 	public void test() {
 		
 		dashboardPage = defaultLogin();
+
 		newOrderPage = dashboardPage.goToNewOrderPage();
-		
-		newOrderPage.addOrder("name",
-				"\"/><script>alert(\"contact\")</script><input type=\"hidden\"", null, null, null, null, null);
-		
+		newOrderPage.addOrder("name", "1234", null, "\"/><script>alert(\"hello\")</script><input type=\"hidden\"", null, null, null);
+
 		ordersPage = newOrderPage.goToOrdersPage();
-		ordersPage.clickAlert();
+
 		editOrderPage = ordersPage.goToEditOrder();
-		
+
+		editOrderPage.clickAlert();
 		assertTrue(editOrderPage.clickAlert());
 	}
-
-	@After
+	
+	@After 
 	public void reset() {
 		
 		ordersPage = editOrderPage.goToOrdersPage();
-		ordersPage.clickAlert();
 		ordersPage.removeOrder();
-		waitForWebsite();
-		ordersPage.logout();
 	}
+
+
 }

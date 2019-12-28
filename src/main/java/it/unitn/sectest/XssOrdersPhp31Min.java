@@ -21,7 +21,7 @@ public class XssOrdersPhp31Min extends BaseTest{
 		
 		newOrderPage = productPage.goToNewOrderPage();
 		
-		newOrderPage.addOrder("name", "1234");
+		newOrderPage.addOrder("name", "1234", null, null, null, null, null);
 		
 		ordersPage = newOrderPage.goToOrdersPage();
 		

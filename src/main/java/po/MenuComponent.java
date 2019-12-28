@@ -12,8 +12,6 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 public class MenuComponent extends PageObject{
 
 	
-	WebDriverWait wait;
-	JavascriptExecutor js = (JavascriptExecutor)driver;
 	
 	@FindBy(xpath = "//li[@id='navSetting']//a[@class='dropdown-toggle']")
 	WebElement userMenu;
