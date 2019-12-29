@@ -15,7 +15,7 @@ public class XssOrdersPhp43Min extends BaseTest{
 		dashboardPage = defaultLogin();
 
 		newOrderPage = dashboardPage.goToNewOrderPage();
-		newOrderPage.addOrder("name", "1234", null, "\"/><script>alert(\"hello\")</script><input type=\"hidden\"", null, null, null);
+		newOrderPage.addOrder("name", "1234", null, "\"/><script>alert(\"hello\")</script><input type=\"hidden\"", null, null, null, null, null, null);
 
 		ordersPage = newOrderPage.goToOrdersPage();
 

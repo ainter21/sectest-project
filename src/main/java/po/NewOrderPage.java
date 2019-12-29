@@ -52,6 +52,12 @@ public class NewOrderPage extends MenuComponent{
 	@FindBy (id = "grandTotalValue")
 	WebElement grandTotalValue;
 	
+	@FindBy (id = "vatValue")
+	WebElement vatValue;
+	
+	@FindBy (id = "dueValue")
+	WebElement dueValue;
+	
 	public NewOrderPage(WebDriver driver) {
 		super(driver);
 		// TODO Auto-generated constructor stub
@@ -64,7 +70,7 @@ public class NewOrderPage extends MenuComponent{
 	}
 
 	
-	public void addOrder(String clientName, String clientContact, String totalValue1, String totalAmountValue, String subTotalValue, String discount, String grandTotalValue) {
+	public void addOrder(String clientName, String clientContact, String totalValue1, String totalAmountValue, String subTotalValue, String discount, String grandTotalValue, String vatValue, String paid, String dueValue) {
 		
 		
 		Actions builders = new Actions(driver);
@@ -88,23 +94,35 @@ public class NewOrderPage extends MenuComponent{
 		if(totalValue1!=null) {
 			js.executeScript("arguments[0].setAttribute('value', arguments[1])", this.totalValue1, totalValue1);
 		}
-		if(totalAmountValue!=null) {
-			js.executeScript("arguments[0].setAttribute('value', arguments[1])", this.totalAmountValue, totalAmountValue);
-		}
 		if(subTotalValue!=null) {
 			js.executeScript("arguments[0].setAttribute('value', arguments[1])", this.subTotalValue, subTotalValue);
+		}
+		if(totalAmountValue!=null) {
+			js.executeScript("arguments[0].setAttribute('value', arguments[1])", this.totalAmountValue, totalAmountValue);
 		}
 		if(discount!=null) {
 			this.discount.sendKeys(discount);
 		}else {
 			this.discount.sendKeys("0");
 		}
-		
 		if(grandTotalValue!=null) {
 			js.executeScript("arguments[0].setAttribute('value', arguments[1])", this.grandTotalValue, grandTotalValue);
 		}
 		
-		paid.sendKeys("0");
+		if(vatValue!=null) {
+			js.executeScript("arguments[0].setAttribute('value', arguments[1])", this.vatValue, vatValue);
+		}
+		if(paid!=null) {
+			this.paid.sendKeys(paid);
+		}else {
+			this.paid.sendKeys("0");
+		}
+
+		if(dueValue!=null) {
+			js.executeScript("arguments[0].setAttribute('value', arguments[1])", this.dueValue, dueValue);
+		}
+		
+		
 		
 		Select payment = new Select(paymentType);
 		payment.selectByVisibleText("Cheque");

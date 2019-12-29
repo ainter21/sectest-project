@@ -7,11 +7,20 @@ import org.openqa.selenium.support.How;
 
 public class UserSettingPage extends MenuComponent{
 
+		
+	@FindBy (id = "username")
+	WebElement username;
+
+	@FindBy (id = "changeUsernameBtn")
+	WebElement changeUsernameBtn;
+
+	@FindBy (id = "bio")
+	WebElement bio;
+
+	@FindBy (id = "changeBioBtn")
+	WebElement changeBioBtn;
+
 	
-	@FindBy(how = How.ID, using = "username")
-	WebElement changeUsernameInput;
-	@FindBy(how = How.ID, using = "changeUsernameBtn")
-	WebElement changeUsernameSubmit;
 	
 	public UserSettingPage(WebDriver driver) {
 		super(driver);
@@ -19,8 +28,16 @@ public class UserSettingPage extends MenuComponent{
 	}
 
 	public void changeUsername(String username) {
-		changeUsernameInput.clear();
-		changeUsernameInput.sendKeys(username);
-		changeUsernameSubmit.click();
+
+		this.username.clear();
+		this.username.sendKeys(username);
+		changeUsernameBtn.click();
+	}
+
+	public void changeBio(String bio) {
+
+		this.bio.clear();
+		this.bio.sendKeys(bio);
+		changeBioBtn.click();
 	}
 }

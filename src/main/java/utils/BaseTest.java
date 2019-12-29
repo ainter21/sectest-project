@@ -17,6 +17,7 @@ import po.EditOrderPage;
 import po.IndexPage;
 import po.NewOrderPage;
 import po.OrdersPage;
+import po.PrintOrderPage;
 import po.ProductPage;
 import po.ReportPage;
 import po.UserSettingPage;
@@ -36,6 +37,7 @@ public class BaseTest {
 	protected ReportPage reportPage;
 	protected UserSettingPage userSettingPage;
 	protected EditOrderPage editOrderPage;
+	protected PrintOrderPage printOrderPage;
 
 	public void waitForWebsite() {
 		try {

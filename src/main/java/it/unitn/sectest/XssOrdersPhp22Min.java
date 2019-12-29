@@ -16,7 +16,7 @@ public class XssOrdersPhp22Min extends BaseTest{
 		newOrderPage = dashboardPage.goToNewOrderPage();
 		
 		newOrderPage.addOrder("name",
-				"\"/><script>alert(\"contact\")</script><input type=\"hidden\"", null, null, null, null, null);
+				"\"/><script>alert(\"contact\")</script><input type=\"hidden\"", null, null, null, null, null, null, null, null);
 		
 		ordersPage = newOrderPage.goToOrdersPage();
 		ordersPage.clickAlert();

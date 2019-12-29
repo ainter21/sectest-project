@@ -2,6 +2,7 @@ package it.unitn.sectest;
 
 import static org.junit.Assert.*;
 
+import org.junit.After;
 import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
@@ -19,7 +20,7 @@ public class XssOrdersPhp35Min extends BaseTest{
 		
 		newOrderPage = dashboardPage.goToNewOrderPage();
 		
-		newOrderPage.addOrder("name", "1234", null, null, null, null, null);
+		newOrderPage.addOrder("name", "1234", null, null, null, null, null, null, null, null);
 		
 		ordersPage = newOrderPage.goToOrdersPage();
 		
@@ -36,6 +37,13 @@ public class XssOrdersPhp35Min extends BaseTest{
 		
 		assertTrue(editOrderPage.clickAlert());
 		
+	}
+	
+	@After 
+	public void reset() {
+		
+		ordersPage = editOrderPage.goToOrdersPage();
+		ordersPage.removeOrder();
 	}
 
 }
