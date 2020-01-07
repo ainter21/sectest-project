@@ -70,7 +70,7 @@ public class XssPrintOrderPhp1Min extends BaseTest{
 
 			if(!handle.equals(parentWindowHandle)) {
 
-				driver.switchTo().window(handle);
+				driver = driver.switchTo().window(handle);
 			}
 		}
 

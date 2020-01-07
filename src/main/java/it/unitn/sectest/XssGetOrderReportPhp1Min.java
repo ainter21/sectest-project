@@ -42,12 +42,13 @@ public class XssGetOrderReportPhp1Min extends BaseTest{
 			if(!handle.equals(parentWindowHandle)) {
 
 				driver.switchTo().window(handle);
+				assertTrue(driver.findElements( By.id("malicious_name") ).size() != 0);
+				assertTrue(driver.findElements( By.id("malicious_contact") ).size() != 0);
+				assertTrue(driver.findElements( By.id("malicious_total") ).size() != 0);
 			}
 		}
 		
-		assertTrue(driver.findElements( By.id("malicious_name") ).size() != 0);
-		assertTrue(driver.findElements( By.id("malicious_contact") ).size() != 0);
-		assertTrue(driver.findElements( By.id("malicious_total") ).size() != 0);
+		
 		
 	}
 	
