@@ -36,16 +36,6 @@ public class XssOrdersPhp11Min extends BaseTest{
 		assertTrue(newOrderPage.clickAlert());
 		
 	}
-	
-	
-	@After
-	public void reset() {
-		
-		productPage = newOrderPage.goToProductPage();
-		productPage.clickAlert();
-		productPage.removeProduct();
-		waitForWebsite();
-		productPage.logout();
-	}
+
 
 }

@@ -33,17 +33,6 @@ public class XssProductPhp4Min extends BaseTest{
 		productPage.clickAlert();
 		
 	}
-	
-	@After
-	public void reset() {
-	
-		categoriesPage = productPage.goToCategoriesPage();
-		categoriesPage.clickAlert();
-		waitForWebsite();
-		categoriesPage.removeCategory();
-		waitForWebsite();
-		categoriesPage.logout();
-		
-	}
+
 
 }

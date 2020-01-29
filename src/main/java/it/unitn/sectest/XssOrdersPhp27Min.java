@@ -39,21 +39,6 @@ public class XssOrdersPhp27Min extends BaseTest{
 		
 		assertTrue(editOrderPage.clickAlert());
 	}
-	
-	@After
-	public void reset() {
-		
-		ordersPage = editOrderPage.goToOrdersPage();
-		
-		ordersPage.removeOrder();
-		waitForWebsite();
-		productPage = ordersPage.goToProductPage();
-		
-		productPage.clickAlert();
-		productPage.removeProduct();
-		
-		waitForWebsite();
-		productPage.logout();
-	}
+
 
 }

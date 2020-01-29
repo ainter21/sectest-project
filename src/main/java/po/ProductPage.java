@@ -67,6 +67,7 @@ public class ProductPage extends MenuComponent{
 		String absPath = "";
 		try {
 			absPath = Paths.get(getClass().getClassLoader().getResource("macbookpro.png").toURI()).toFile().getAbsolutePath();
+			System.out.println(absPath);
 		} catch (URISyntaxException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

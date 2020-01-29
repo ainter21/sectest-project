@@ -85,12 +85,5 @@ public class XssPrintOrderPhp1Min extends BaseTest{
 
 	}
 
-	@After 
-	public void reset() {
-
-		driver.close();
-		driver.switchTo().window(parentWindowHandle);
-		ordersPage.removeOrder();
-	}
 
 }

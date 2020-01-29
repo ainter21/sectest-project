@@ -29,18 +29,6 @@ public class XssProductPhp1Min extends BaseTest{
 		
 		
 	}
-	
-	@After
-	public void reset() {
-		
-		waitForWebsite();
-		brandPage = productPage.goToBrandPage();
-		brandPage.clickAlert();
-		waitForWebsite();
-		brandPage.removeBrand();
-		waitForWebsite();
-		productPage.logout();
-		
-	}
+
 
 }

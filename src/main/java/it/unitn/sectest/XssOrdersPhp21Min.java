@@ -27,14 +27,5 @@ public class XssOrdersPhp21Min extends BaseTest{
 		
 	}
 	
-	@After
-	public void reset() {
-		
-		ordersPage = editOrderPage.goToOrdersPage();
-		ordersPage.clickAlert();
-		ordersPage.removeOrder();
-		waitForWebsite();
-		ordersPage.logout();
-	}
 
 }

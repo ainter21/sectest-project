@@ -30,12 +30,5 @@ public class XssOrdersPhp37Min extends BaseTest{
 		
 	}
 	
-	
-	@After 
-	public void reset() {
-		
-		ordersPage = editOrderPage.goToOrdersPage();
-		ordersPage.removeOrder();
-	}
 
 }

@@ -36,7 +36,7 @@ public class XssFetchProductDataPhp1Min extends BaseTest{
 		newOrderPage.clickAlert();
 		
 		newOrderPage.addProductRow();		
-		assertTrue(newOrderPage.clickAlert());
+//		assertTrue(newOrderPage.clickAlert());
 		assertTrue(newOrderPage.clickAlert());
 
 

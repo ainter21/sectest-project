@@ -37,14 +37,6 @@ public class XssFetchProductPhp1Min extends BaseTest{
 		
 	}
 	
-	@After
-	public void reset() {
 	
-		waitForWebsite();
-		productPage.removeProduct();
-		waitForWebsite();
-		productPage.logout();
-		
-	}
 
 }

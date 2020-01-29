@@ -117,4 +117,11 @@ public class MenuComponent extends PageObject{
 		userSettingMenu.click();
 		return new UserSettingPage(driver);
 	}
+	
+	public ManageUsersPage goToManageUsersPage() {
+		
+		userMenu.click();
+		driver.findElement(By.xpath("//li[@id='topNavUser']//a[1]")).click();
+		return new ManageUsersPage(driver);
+	}
 }

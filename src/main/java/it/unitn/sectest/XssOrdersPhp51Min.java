@@ -24,12 +24,6 @@ public class XssOrdersPhp51Min extends BaseTest{
 		editOrderPage.clickAlert();
 		assertTrue(editOrderPage.clickAlert());
 	}
-	
-	@After 
-	public void reset() {
-		
-		ordersPage = editOrderPage.goToOrdersPage();
-		ordersPage.removeOrder();
-	}
+
 
 }
