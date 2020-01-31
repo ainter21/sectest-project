@@ -7,7 +7,7 @@ import org.junit.Test;
 
 import utils.BaseTest;
 
-public class XssOrderPhp29Min extends BaseTest{
+public class XssOrdersPhp29Min extends BaseTest{
 
 	@Test
 	public void test() {

@@ -52,13 +52,6 @@ public class XssGetOrderReportPhp1Min extends BaseTest{
 		
 	}
 	
-	@After 
-	public void reset() {
 
-		driver.close();
-		driver.switchTo().window(parentWindowHandle);
-		ordersPage = reportPage.goToOrdersPage();
-		ordersPage.removeOrder();
-	}
 
 }

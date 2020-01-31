@@ -43,20 +43,7 @@ public class XssFetchProductDataPhp1Min extends BaseTest{
 
 	}
 
-	@After
-	public void reset() {
 
-		waitForWebsite();
-		productPage = newOrderPage.goToProductPage();
-		waitForWebsite();
-		productPage.clickAlert();
-		waitForWebsite();
-		productPage.removeProduct();
-
-		waitForWebsite();
-		productPage.logout();
-
-	}
 
 
 

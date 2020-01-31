@@ -28,11 +28,11 @@ public class XssProductPhp4Min extends BaseTest{
 		productPage = categoriesPage.goToProductPage();
 		
 
-		
-		assertTrue(productPage.clickAlert());
 		productPage.clickAlert();
+		assertTrue(productPage.clickAlert());
+		
 		
 	}
-
+ 
 
 }

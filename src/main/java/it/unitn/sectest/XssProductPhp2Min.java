@@ -28,9 +28,9 @@ public class XssProductPhp2Min extends BaseTest{
 
 		productPage = categoriesPage.goToProductPage();
 
-
-		assertTrue(productPage.clickAlert());
 		productPage.clickAlert();
+		assertTrue(productPage.clickAlert());
+		
 
 	}
 

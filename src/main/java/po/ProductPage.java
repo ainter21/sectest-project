@@ -47,6 +47,24 @@ public class ProductPage extends MenuComponent{
 	@FindBy (id = "removeProductBtn")
 	WebElement removeProductBtn;
 
+	
+	//edit product
+	@FindBy(xpath = "//div[@class='btn-group open']//a[@id='editProductModalBtn']")
+	WebElement editProductModalBtn;
+	
+	@FindBy(xpath = "//a[contains(text(),'Product Info')]")
+	WebElement productInfo;	
+	@FindBy(id = "editProductName")
+	WebElement editProductName;
+	@FindBy(id="editQuantity")
+	WebElement editQuantity;
+	@FindBy(id = "editRate")
+	WebElement editRate;
+	
+	@FindBy(id = "editProductBtn")
+	WebElement editProductBtn;
+	
+	
 
 
 	public ProductPage(WebDriver driver) {
@@ -112,6 +130,34 @@ public class ProductPage extends MenuComponent{
 		removeProductBtn.click();
 	}
 
+
+
+	public void editProduct(String name, String quantity, String rate, String brand, String category,
+			String status) {
+		
+		driver.findElement(By.xpath("//tr[@class='odd']//button[@class='btn btn-default dropdown-toggle'][contains(text(),'Action')]")).click();
+		
+		JavascriptExecutor js = ((JavascriptExecutor) driver);
+		js.executeScript("arguments[0].scrollIntoView(true);", editProductModalBtn);
+		editProductModalBtn.click();
+		
+		productInfo.click();
+		
+
+		editQuantity.sendKeys(quantity);
+		
+		editProductBtn.click();
+		
+		clickAlert();
+
+		
+		driver.findElement(By.xpath("/html[1]/body[1]/div[1]/div[3]/div[1]/div[1]/div[2]/div[2]/div[1]/div[2]/form[1]/div[8]/button[1]")).click();
+		
+		
+		
+		
+		
+	}
 
 
 }

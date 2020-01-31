@@ -32,12 +32,6 @@ public class XssFetchOrderPhp1Min extends BaseTest{
 	}
 	
 	
-	@After public void reset() {
-		
-		waitForWebsite();
-		ordersPage.removeOrder();
-		waitForWebsite();
-		ordersPage.logout();
-	}
+
 
 }

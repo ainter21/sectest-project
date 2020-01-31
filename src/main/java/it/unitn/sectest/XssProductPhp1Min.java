@@ -23,8 +23,9 @@ public class XssProductPhp1Min extends BaseTest{
 		brandPage.addBrand("Malicious<script>alert(\"brand\")</script>", "Available");
 		waitForWebsite();
 		productPage = brandPage.goToProductPage();
-		assertTrue(productPage.clickAlert());
 		productPage.clickAlert();
+		assertTrue(productPage.clickAlert());
+		
 		
 		
 		

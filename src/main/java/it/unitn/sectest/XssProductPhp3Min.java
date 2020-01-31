@@ -24,8 +24,9 @@ public class XssProductPhp3Min extends BaseTest{
 		productPage = brandPage.goToProductPage();
 		
 		
-		assertTrue(productPage.clickAlert());
 		productPage.clickAlert();
+		assertTrue(productPage.clickAlert());
+		
 		
 		
 	}
