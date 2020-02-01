@@ -54,10 +54,8 @@ public static void cleandb() {
 					rs = stmt.executeUpdate("INSERT INTO categories (categories_id,categories_name, categories_active, categories_status) VALUES (2,'PC', 1, 1)");
 					rs = stmt.executeUpdate("INSERT INTO categories (categories_id,categories_name, categories_active, categories_status) VALUES (3,'Tablet', 1, 1)");
 					
-					String absPath = "";
-					String path = "src/main/resources/macbookpro.png";
-					File file = new File(path);
-					absPath = file.getAbsolutePath();
+					String absPath = "../assets/images/photo_default.png";
+					
 					
 					
 					rs = stmt.executeUpdate("INSERT INTO product "
@@ -73,6 +71,7 @@ public static void cleandb() {
 					
 					rs = stmt.executeUpdate("INSERT INTO order_item "
 							+ "(order_item_id, order_id, product_id, quantity, rate, total, order_item_status) "
+					
 							+ "VALUES (1, 1, 1, '1', '999','999.00', 1)");
 			
 		}catch(Exception e) {

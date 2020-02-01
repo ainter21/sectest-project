@@ -108,14 +108,14 @@ public class BaseTest {
 					rs = stmt.executeUpdate("INSERT INTO categories (categories_id,categories_name, categories_active, categories_status) VALUES (2,'PC', 1, 1)");
 					rs = stmt.executeUpdate("INSERT INTO categories (categories_id,categories_name, categories_active, categories_status) VALUES (3,'Tablet', 1, 1)");
 					
-					String absPath = "";
-					try {
-						absPath = Paths.get(getClass().getClassLoader().getResource("macbookpro.png").toURI()).toFile().getAbsolutePath();
-						System.out.println(absPath);
-					} catch (URISyntaxException e) {
-						// TODO Auto-generated catch block
-						e.printStackTrace();
-					}
+					String absPath = "../assets/images/photo_default.png";
+//					try {
+//						absPath = Paths.get(getClass().getClassLoader().getResource("macbookpro.png").toURI()).toFile().getAbsolutePath();
+//						System.out.println(absPath);
+//					} catch (URISyntaxException e) {
+//						// TODO Auto-generated catch block
+//						e.printStackTrace();
+//					}
 					
 					rs = stmt.executeUpdate("INSERT INTO product "
 							+ "(product_id, product_name, product_image, brand_id, categories_id, quantity, rate, active, status) "
