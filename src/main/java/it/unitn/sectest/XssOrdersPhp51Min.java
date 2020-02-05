@@ -19,6 +19,8 @@ public class XssOrdersPhp51Min extends BaseTest{
 
 		ordersPage = newOrderPage.goToOrdersPage();
 
+		waitForWebsite();
+		waitForWebsite();
 		editOrderPage = ordersPage.goToEditOrder();
 
 		editOrderPage.clickAlert();
