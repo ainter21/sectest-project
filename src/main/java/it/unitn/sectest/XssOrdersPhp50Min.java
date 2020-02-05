@@ -18,7 +18,7 @@ public class XssOrdersPhp50Min extends BaseTest{
 		newOrderPage.addOrder("name", "1234", null, null, null, null, null, "\"/><script>alert(\"VAT\")</script><input type=\"hidden\"", null, null);
 
 		ordersPage = newOrderPage.goToOrdersPage();
-
+		waitForWebsite();
 		editOrderPage = ordersPage.goToEditOrder();
 
 		editOrderPage.clickAlert();

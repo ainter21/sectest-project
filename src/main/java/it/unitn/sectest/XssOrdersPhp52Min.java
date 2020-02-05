@@ -23,7 +23,7 @@ public class XssOrdersPhp52Min extends BaseTest{
 		newOrderPage.addOrder("name", "1234", null, null, null, null, null, null, null, null);
 		
 		ordersPage = newOrderPage.goToOrdersPage();
-		
+		waitForWebsite();
 		editOrderPage = ordersPage.goToEditOrder();
 		
 		WebElement gstn = driver.findElement(By.id("gstn"));

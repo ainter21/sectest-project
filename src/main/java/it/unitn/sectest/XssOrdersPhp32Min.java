@@ -30,6 +30,7 @@ public class XssOrdersPhp32Min extends BaseTest{
 		
 		ordersPage = productPage.goToOrdersPage();
 		
+		waitForWebsite();
 		editOrderPage = ordersPage.goToEditOrder();
 		
 		assertTrue(editOrderPage.clickAlert());

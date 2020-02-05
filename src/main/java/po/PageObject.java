@@ -35,7 +35,7 @@ public class PageObject {
 	
 	public boolean clickAlert() {
 		try {
-			WebDriverWait webDriverWait = new WebDriverWait(driver, 1);
+			WebDriverWait webDriverWait = new WebDriverWait(driver, 2);
 			webDriverWait.until(ExpectedConditions.alertIsPresent());
 			driver.switchTo().alert().accept();
 			alert = true;

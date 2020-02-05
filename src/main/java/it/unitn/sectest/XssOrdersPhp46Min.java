@@ -18,7 +18,7 @@ public class XssOrdersPhp46Min extends BaseTest{
 		newOrderPage.addOrder("name", "1234", null, null, null, null, "\"/><script>alert(\"grandTotalValue\")</script><input type=\"hidden\"", null, null, null);
 
 		ordersPage = newOrderPage.goToOrdersPage();
-
+		waitForWebsite();
 		editOrderPage = ordersPage.goToEditOrder();
 
 		editOrderPage.clickAlert();

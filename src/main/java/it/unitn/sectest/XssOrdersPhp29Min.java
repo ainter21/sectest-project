@@ -30,7 +30,7 @@ public class XssOrdersPhp29Min extends BaseTest{
 		editOrderPage.addProductToExistingOrder("name");
 		
 		ordersPage = editOrderPage.goToOrdersPage();
-		
+		waitForWebsite();
 		editOrderPage = ordersPage.goToEditOrder();
 		
 		editOrderPage.clickAlert();

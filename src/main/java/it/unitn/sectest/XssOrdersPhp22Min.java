@@ -20,6 +20,7 @@ public class XssOrdersPhp22Min extends BaseTest{
 		
 		ordersPage = newOrderPage.goToOrdersPage();
 		ordersPage.clickAlert();
+		waitForWebsite();
 		editOrderPage = ordersPage.goToEditOrder();
 		
 		assertTrue(editOrderPage.clickAlert());
